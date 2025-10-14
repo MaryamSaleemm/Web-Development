@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OverFlow Property</title>
+</head>
+
+<body>
+    <style>
+        .box{
+            width: 30vw;  /* view port width , view port height*/
+            height: 40vh;
+            /*overflow: scroll;*/ /*this provide a scroll bar*/ 
+            overflow: auto;  /*
+            overflow: hidden;       overflow got hide
+            overflow:  clip;        prgramtically stops scrolling 
+            this provide a scroll bar if needed otherwise no scroll bar*/
+            border: 2px solid black;
+           /* white-space: nowrap;*/  /*for horizontal scroll*/
+           text-overflow: ellipsis;  /* provide .....*/
+
+          /* overflow-x: hidden;
+           overflow-y: scroll;
+           overflow: hidden scroll;  for both x and y axis
+           */
+        }
+    </style>
+    <div class="box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas incidunt error perspiciatis inventore esse, ab dolore numquam, accusamus dolor voluptatum nulla neque expedita sint, qui iure. Odio neque numquam praesentium.</div>
+</body>
+</html>

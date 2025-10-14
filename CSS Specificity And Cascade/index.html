@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Specificity And Cascade</title>
+</head>
+<body>
+
+    <!-- Priority/Specificity
+        ***********InLine Selector(1000) > ID selector(100) > Class/Arribute Selector(10) > Element Selector(1) > Universal Selector(0) *******-->
+
+    <style>
+        .red{
+            color: rgb(234, 148, 19) !important;
+
+     /*using [!important] make that color compulsory  to be applied, otherwise if  all have same selector the last one will be applied
+     pseudoClass(10)*/
+        }
+        .yellow{
+            color: blue;
+        }
+        h3.green{
+            background-color: rgb(128, 46, 46);
+        }
+        p{
+            background-color: rgb(8, 28, 21);
+        }
+        [data-x=a]{
+            background-color: cadetblue;
+        }
+    </style>
+    <h1>
+        <p  class="red yellow green">
+        CSS Specificity And Cascade
+        </p>
+        <h3 data-x="a">
+            here is attribute selector
+        </h3>
+    </h1>
+</body>
+</html>

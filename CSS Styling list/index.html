@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Styling Lists</title>
+</head>
+<body>
+    <style>
+        element.style{
+            display: flex;
+        }
+        nav ul li{
+            list-style: disc;
+            background-color: rgb(187, 139, 231);
+            /*list-style-type: "";*/
+            list-style-position: inside;  /*this makes the bullets or the boundaries to include inside and the border will apply to both the items and the bullets otherrwise onto the items only*/
+            border: 2px solid black;
+            list-style-image:url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.freepik.com%2Ffree-photos-vectors%2Fbeautiful-flowers&psig=AOvVaw0Fnea8VktmlXwTeCuCNGWY&ust=1760109607438000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCOCUrrG1l5ADFQAAAAAdAAAAABAE") ;
+        
+        }
+    </style>
+    <nav>
+        <ul>
+            <li style="list-style: none;">home</li>
+            <li>about</li>
+            <li>contact</li>
+        </ul>
+    </nav>
+</body>
+</html>

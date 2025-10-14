@@ -1,0 +1,118 @@
+
+<!-- 1. User Action (Dynamic) Pseudo-classes
+
+These apply when the user interacts with an element.
+
+:hover → when mouse is over
+
+:active → when clicked
+
+:focus → when focused (e.g., input)
+
+:visited → visited links
+
+:link → unvisited links
+
+🔹 2. Structural Pseudo-classes
+
+These target elements based on their position in the DOM.
+
+:first-child → first child of parent
+
+:last-child → last child
+
+:only-child → only child of parent
+
+:nth-child(n) → nth child
+
+:nth-last-child(n) → nth child from end
+
+:first-of-type → first of its type
+
+:last-of-type → last of its type
+
+:only-of-type → only one of that type
+
+🔹 3. Form-related Pseudo-classes
+
+Special states for form controls.
+
+:checked → checkbox/radio selected
+
+:disabled → input disabled
+
+:enabled → input enabled
+
+:required → must be filled
+
+:optional → not required
+
+:valid → valid input
+
+:invalid → invalid input
+
+:in-range / :out-of-range → for inputs with min/max
+
+🔹 4. Negation / Targeting
+
+:not(selector) → excludes elements
+
+:target → element linked by a URL fragment (#id)
+
+🔹 5. UI State Pseudo-classes
+
+:fullscreen → when element is in fullscreen
+
+:focus-within → parent of a focused element
+
+:focus-visible → when focus should be visible -->
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+p:first-child {
+  color: red;    /* First child */
+}
+p:last-child {
+  color: blue;   /* Last child */
+}
+p:nth-child(2) {
+  color: green;  /* Second child */
+}
+p:nth-last-child(2) {
+  color: orange; /* Second from the end */
+}
+li:only-child {
+  background: yellow; /* Only child in parent */
+}
+h2:first-of-type {
+  text-decoration: underline; /* First h2 inside parent */
+}
+h2:last-of-type {
+  font-style: italic; /* Last h2 inside parent */
+}
+
+</style>
+</head>
+<body>
+  <div>
+    <p>First Paragraph</p>
+    <p>Second Paragraph</p>
+    <p>Third Paragraph</p>
+  </div>
+  <ul>
+    <li>Only item here</li>
+  </ul>
+  <div>
+    <h2>Heading 1</h2>
+    <h2>Heading 2</h2>
+  </div>
+
+  
+</body>
+</html>
+

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlexBox</title>
+
+      <style>
+.Container{
+
+border: 2px solid rgb(228, 57, 57);
+display: flex;
+height: 80vh;
+/*justify-content: center;       ****  IT DOES ACC TO THE MAIN AXIS*/
+flex-direction: row;
+/*flex-wrap: wrap; */                /*it start showing in multiple rows*/
+/*flex-wrap: nowrap;   
+ flex-direction: column; */
+align-items: center;             /*if have single line*/
+/*align-content: center; */         /*if have multiple lines*/
+
+flex-flow: row wrap;
+gap: 10px;
+
+/*
+row-gap: 30px;
+column-gap: 30px;
+*/
+gap: 40px 30px;
+/*
+lex-direction: column-reverse;      ***items will display from bottom to the top.Same goes for rows
+flex: end;                     ***lay them at end to the right
+flex: start;
+justify-content: space-around;
+justify-content: space-between;
+justify-content: space-evenly;
+align-items: flex-end;         ***lay them at the bottom
+align-items: flex-start;
+align-items: baseline;
+*/
+}
+
+.item{
+    /*flex-grow: 1;           all items of equal size*/
+    height: 90px;
+    width: 90px;
+    justify-content: center;
+    background-color: aqua;
+    border: 2px solid black;
+    margin: 4px;
+    /*default order 0,less order value come in start and 
+    the more order value come in end and so on...*/
+}
+    .order-1{
+        order: 1;
+    }
+    .order-2{
+        order: 2;
+    }
+.item1{
+       /* flex-grow: 4; */        /*make one specific item size diff*/
+       flex-shrink: 2;          /*remove wrap to see this in working */
+       align-self: self-end;
+    }
+    </style>
+</head>
+
+<body>
+
+    <div class="Container">
+        
+        <div class="item item1"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item order-1">1</div>
+        <div class="item"></div>
+        <div class="item order-2">2</div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        
+
+    </div>
+</body>
+
+</html>

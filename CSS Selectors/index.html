@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors</title>
+</head>
+
+<body>
+    <!-- Selectors -->
+     <!-- if we dont want the same color for each class we choose a  specific selector-->
+
+    <style>
+
+            /* Element Selector */
+        div {
+            background-color: aquamarine;
+        }
+            /* Class Selector */
+        .red {
+            background-color: red;
+        }
+            /* ID Selector */
+        #female {
+            color: rgb(156, 226, 43);
+            background-color: rgb(123, 123, 212);
+        }
+        /* Child Selector */
+        pre > p {
+            background-color: beige;
+        }
+        /* Desendant Selector */
+        div p{
+            background-color: bisque;
+        }
+        *{
+            /* Universal Selector */
+
+            /*color: rgb(218, 133, 21);*/
+            margin: 0;
+            padding: 0;
+            /*background-color: rgb(186, 186, 239);*/
+        }
+
+        /* Pseudo Selector categories*/
+
+        a:visited{
+            color: chartreuse;
+        }
+        a:link{
+            color: chocolate;
+        }
+        a:active{
+            /*when clicked background color changed...to test comment the below hover*/
+            background-color: rgb(98, 30, 161);
+        }
+        a:hover{
+            /*when you bring the cursor to the link it will show a background color*/
+            background-color: aqua;
+        }
+       /* p:first-child{
+            background-color: cornflowerblue;
+        }
+            */
+    </style>
+
+
+
+        <!-- Element Selector -->
+
+    <div>
+        Element selector
+    </div>
+
+    <!-- Class Selector -->
+
+    <div class="red">
+        Class Selector
+    </div>
+
+    <!-- ID Selector -->
+
+    <div id="female">
+        ID Selector
+    </div>
+
+    <!-- Child Selector -->
+
+    <pre>
+        <p>
+            Child Selector
+        </p>
+        </pre>
+
+
+    <!-- Desendent Selector -->
+
+        <div>
+            <article>
+                <p>
+                    Desendant Selector
+                </p>
+            </article>
+        </div>
+
+<a href="https://www.youtube.com">open youtube</a>
+
+    <!--for pseudo selector first-child -->
+
+    <main>
+        <p>I am the first child</p>
+        <p>I am the second child</p>
+    </main>
+
+
+</body>
+
+</html>

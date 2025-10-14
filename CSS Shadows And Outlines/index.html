@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Shadow and outlines</title>
+</head>
+<body>
+    <style>
+.box{
+    border: 2px solid rgb(151, 32, 32);
+    padding: 34px;
+    margin: 20px;
+/*h-offset,v-offset Blur,spread,color,inset*/
+    box-shadow: 5px 15px 5px 4px #70A117 ;
+
+   /* box-shadow: 5px 15px 5px 4px #70A117 inset; */
+   /*this inset makes the inside shadow*/
+
+    text-shadow: 2px 3px 4px #831010;
+    /*h-offset,v-offset Blur,color*/
+}
+
+.text-shadow{
+    border: 2px solid black;
+    text-shadow: 2px 2px 2px #e17e7e;
+    outline: 2px solid blue;
+    outline-offset: 23px;
+    /*unlike border that include padding and margin for making the border far we have outline-offset in case of outline.*/ 
+    
+}
+
+    </style>
+    <div class="box">
+        i am a box
+    </div>
+    <br>
+    <p class="text-shadow">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis ullam rerum cum quae reiciendis quo ab sint adipisci aut, sunt qui quod nam itaque culpa possimus ipsa nobis obcaecati quasi?</p>
+</body>
+</html>

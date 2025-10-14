@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Types of styling using CSS</title>
+    <!-- Inline CSS
+    Internal CSS
+    External CSS -->
+</head>
+<body>
+    <!-- This is an Inline CSS.
+     Its not a good practice to use inline css in ideal cases.
+     Apply on just that specific element in which the style attribute is used -->
+
+    <span style="color: blueviolet;background-color: red">
+        I am inline CSS
+    </span>
+<br>
+    <!-- this is an Internal CSS i.e. style by using div  selector within <style></style> tag  
+     This is used for short content websites
+     modify accordingly all occuring of that tag whose selector was created-->
+    <style>
+        div{
+            color: rebeccapurple;
+            background-color: rgb(102, 225, 225);
+        }
+    </style>
+
+    <div> I am internal css</div>
+
+
+    <!-- this is an External CSS
+    It is ideal for use in making large websites 
+    Use for making changes in bulk. -->
+
+    <link rel="stylesheet" href="style.css">
+    <pre> i am external css</pre>
+</body>
+</html>

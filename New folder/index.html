@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Poultry Farm</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+        .mobile-container {
+            max-width: 375px;
+            margin: 0 auto;
+            min-height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .fade-in {
+            animation: fadeIn 0.3s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .pulse-dot {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+    <div class="mobile-container">
+        <!-- Header -->
+        <div class="bg-white shadow-lg p-4 flex items-center justify-between">
+            <div class="flex items-center">
+                <div class="w-10 h-10 bg-yellow-500 rounded-full flex items-center justify-center mr-3">
+                    🐔
+                </div>
+                <div>
+                    <h1 class="text-lg font-bold text-gray-800">Master Poultry</h1>
+                    <p class="text-xs text-gray-500">Farm Management</p>
+                </div>
+            </div>
+            <div class="flex items-center">
+                <span class="pulse-dot w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                <span class="text-xs text-gray-600">Online</span>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div id="app-content" class="p-4">
+            <!-- Dashboard View -->
+            <div id="dashboard" class="fade-in">
+                <!-- Stats Cards -->
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                    <div class="bg-white rounded-lg p-4 shadow-md">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-2xl font-bold text-blue-600">1,247</p>
+                                <p class="text-xs text-gray-500">Total Birds</p>
+                            </div>
+                            <div class="text-2xl">🐓</div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg p-4 shadow-md">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-2xl font-bold text-green-600">342</p>
+                                <p class="text-xs text-gray-500">Eggs Today</p>
+                            </div>
+                            <div class="text-2xl">🥚</div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg p-4 shadow-md">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-2xl font-bold text-orange-600">85%</p>
+                                <p class="text-xs text-gray-500">Feed Level</p>
+                            </div>
+                            <div class="text-2xl">🌾</div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg p-4 shadow-md">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-2xl font-bold text-red-600">3</p>
+                                <p class="text-xs text-gray-500">Health Alerts</p>
+                            </div>
+                            <div class="text-2xl">⚕️</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="bg-white rounded-lg p-4 shadow-md mb-6">
+                    <h3 class="font-semibold text-gray-800 mb-3">Quick Actions</h3>
+                    <div class="grid grid-cols-2 gap-3">
+                        <button onclick="showSection('feed')" class="bg-blue-500 text-white p-3 rounded-lg text-sm font-medium hover:bg-blue-600 transition-colors">
+                            🌾 Feed Management
+                        </button>
+                        <button onclick="showSection('health')" class="bg-green-500 text-white p-3 rounded-lg text-sm font-medium hover:bg-green-600 transition-colors">
+                            ⚕️ Health Check
+                        </button>
+                        <button onclick="showSection('production')" class="bg-yellow-500 text-white p-3 rounded-lg text-sm font-medium hover:bg-yellow-600 transition-colors">
+                            📊 Production
+                        </button>
+                        <button onclick="showSection('inventory')" class="bg-purple-500 text-white p-3 rounded-lg text-sm font-medium hover:bg-purple-600 transition-colors">
+                            📦 Inventory
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Recent Activity -->
+                <div class="bg-white rounded-lg p-4 shadow-md">
+                    <h3 class="font-semibold text-gray-800 mb-3">Recent Activity</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between p-2 bg-gray-50 rounded">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                                    ✅
+                                </div>
+                                <div>
+                                    <p class="text-sm font-medium">Morning feed completed</p>
+                                    <p class="text-xs text-gray-500">Coop A - 8:30 AM</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between p-2 bg-gray-50 rounded">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-yellow-100 rounded-full flex items-center justify-center mr-3">
+                                    ⚠️
+                                </div>
+                                <div>
+                                    <p class="text-sm font-medium">Low feed alert - Coop B</p>
+                                    <p class="text-xs text-gray-500">2 hours ago</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between p-2 bg-gray-50 rounded">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                                    📈
+                                </div>
+                                <div>
+                                    <p class="text-sm font-medium">Egg production up 12%</p>
+                                    <p class="text-xs text-gray-500">Yesterday</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feed Management -->
+            <div id="feed" class="hidden fade-in">
+                <div class="flex items-center mb-4">
+                    <button onclick="showSection('dashboard')" class="mr-3 p-2 rounded-full bg-white shadow-md">
+                        ←
+                    </button>
+                    <h2 class="text-xl font-bold text-white">Feed Management</h2>
+                </div>
+
+                <div class="bg-white rounded-lg p-4 shadow-md mb-4">
+                    <h3 class="font-semibold text-gray-800 mb-3">Feed Levels</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm">Coop A - Starter Feed</span>
+                            <div class="flex items-center">
+                                <div class="w-20 h-2 bg-gray-200 rounded-full mr-2">
+                                    <div class="w-4/5 h-2 bg-green-500 rounded-full"></div>
+                                </div>
+                                <span class="text-sm text-gray-600">85%</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm">Coop B - Layer Feed</span>
+                            <div class="flex items-center">
+                                <div class="w-20 h-2 bg-gray-200 rounded-full mr-2">
+                                    <div class="w-1/4 h-2 bg-red-500 rounded-full"></div>
+                                </div>
+                                <span class="text-sm text-gray-600">25%</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm">Coop C - Grower Feed</span>
+                            <div class="flex items-center">
+                                <div class="w-20 h-2 bg-gray-200 rounded-full mr-2">
+                                    <div class="w-3/5 h-2 bg-yellow-500 rounded-full"></div>
+                                </div>
+                                <span class="text-sm text-gray-600">60%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg p-4 shadow-md mb-4">
+                    <h3 class="font-semibold text-gray-800 mb-3">Schedule Feeding</h3>
+                    <form onsubmit="scheduleFeed(event)" class="space-y-3">
+                        <select class="w-full p-2 border border-gray-300 rounded-lg">
+                            <option>Select Coop</option>
+                            <option>Coop A</option>
+                            <option>Coop B</option>
+                            <option>Coop C</option>
+                        </select>
+                        <select class="w-full p-2 border border-gray-300 rounded-lg">
+                            <option>Feed Type</option>
+                            <option>Starter Feed</option>
+                            <option>Grower Feed</option>
+                            <option>Layer Feed</option>
+                        </select>
+                        <input type="number" placeholder="Amount (kg)" class="w-full p-2 border border-gray-300 rounded-lg">
+                        <input type="time" class="w-full p-2 border border-gray-300 rounded-lg">
+                        <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded-lg font-medium hover:bg-blue-600 transition-colors">
+                            Schedule Feed
+                        </button>
+                    </form>
+                </div>
+
+                <div class="bg-white rounded-lg p-4 shadow-md">
+                    <h3 class="font-semibold text-gray-800 mb-3">Feed Inventory</h3>
+                    <div class="space-y-2">
+                        <div class="flex justify-between items-center p-2 bg-gray-50 rounded">
+                            <span class="text-sm">Starter Feed</span>
+                            <span class="text-sm font-medium">450 kg</span>
+                        </div>
+                        <div class="flex justify-between items-center p-2 bg-gray-50 rounded">
+                            <span class="text-sm">Grower Feed</span>
+                            <span class="text-sm font-medium">320 kg</span>
+                        </div>
+                        <div class="flex justify-between items-center p-2 bg-gray-50 rounded">
+                            <span class="text-sm">Layer Feed</span>
+                            <span class="text-sm font-medium">180 kg</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Health Management -->
+            <div id="health" class="hidden fade-in">
+                <div class="flex items-center mb-4">
+                    <button onclick="showSection('dashboard')" class="mr-3 p-2 rounded-full bg-white shadow-md">
+                        ←
+                    </button>
+                    <h2 class="text-xl font-bold text-white">Health Management</h2>
+                </div>
+
+                <div class="bg-white rounded-lg p-4 shadow-md mb-4">
+                    <h3 class="font-semibold text-gray-800 mb-3">Health Alerts</h3>
+                    <div class="space-y-3">
+                        <div class="p-3 bg-red-50 border-l-4 border-red-500 rounded">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="text-sm font-medium text-red-800">Respiratory symptoms detected</p>
+                                    <p class="text-xs text-red-600">Coop B - 5 birds affected</p>
+                                </div>
+                                <span class="text-red-500">🚨</span>
+                            </div>
+                        </div>
+                        <div class="p-3 bg-yellow-50 border-l-4 border-yellow-500 rounded">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="text-sm font-medium text-yellow-800">Vaccination due</p>
+                                    <p class="text-xs text-yellow-600">Coop A - Newcastle disease</p>
+                                </div>
+                                <span class="text-yellow-500">⚠️</span>
+                            </div>
+                        </div>
+                        <div class="p-3 bg-orange-50 border-l-4 border-orange-500 rounded">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="text-sm font-medium text-orange-800">Temperature fluctuation</p>
+                                    <p class="text-xs text-orange-600">Coop C - Monitor closely</p>
+                                </div>
+                                <span class="text-orange-500">🌡️</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg p-4 shadow-md mb-4">
+                    <h3 class="font-semibold text-gray-800 mb-3">Record Health Check</h3>
+                    <form onsubmit="recordHealth(event)" class="space-y-3">
+                        <select class="w-full p-2 border border-gray-300 rounded-lg">
+                            <option>Select Coop</option>
+                            <option>Coop A</option>
+                            <option>Coop B</option>
+                            <option>Coop C</option>
+                        </select>
+                        <input type="number" placeholder="Number of birds checked" class="w-full p-2 border border-gray-300 rounded-lg">
+                        <select class="w-full p-2 border border-gray-300 rounded-lg">
+                            <option>Health Status</option>
+                            <option>Healthy</option>
+                            <option>Minor Issues</option>
+                            <option>Requires Treatment</option>
+                            <option>Quarantine Needed</option>
+                        </select>
+                        <textarea placeholder="Notes and observations..." class="w-full p-2 border border-gray-300 rounded-lg h-20 resize-none"></textarea>
+                        <button type="submit" class="w-full bg-green-500 text-white p-2 rounded-lg font-medium hover:bg-green-600 transition-colors">
+                            Record Check
+                        </button>
+                    </form>
+                </div>
+
+                <div class="bg-white rounded-lg p-4 shadow-md">
+                    <h3 class="font-semibold text-gray-800 mb-3">Vaccination Schedule</h3>
+                    <div class="space-y-2">
+                        <div class="flex justify-between items-center p-2 bg-gray-50 rounded">
+                            <div>
+                                <span class="text-sm font-medium">Newcastle Disease</span>
+                                <p class="text-xs text-gray-500">Due: Dec 15, 2024</p>
+                            </div>
+                            <span class="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded">Pending</span>
+                        </div>
+                        <div class="flex justify-between items-center p-2 bg-gray-50 rounded">
+                            <div>
+                                <span class="text-sm font-medium">Infectious Bronchitis</span>
+                                <p class="text-xs text-gray-500">Completed: Dec 1, 2024</p>
+                            </div>
+                            <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">Done</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Production Tracking -->
+            <div id="production" class="hidden fade-in">
+                <div class="flex items-center mb-4">
+                    <button onclick="showSection('dashboard')" class="mr-3 p-2 rounded-full bg-white shadow-md">
+                        ←
+                    </button>
+                    <h2 class="text-xl font-bold text-white">Production Tracking</h2>
+                </div>
+
+                <div class="bg-white rounded-lg p-4 shadow-md mb-4">
+                    <h3 class="font-semibold text-gray-800 mb-3">Today's Collection</h3>
+                    <div class="grid grid-cols-3 gap-3 mb-4">
+                        <div class="text-center">
+                            <p class="text-2xl font-bold text-blue-600">342</p>
+                            <p class="text-xs text-gray-500">Total Eggs</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-2xl font-bold text-green-600">89%</p>
+                            <p class="text-xs text-gray-500">Lay Rate</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-2xl font-bold text-orange-600">12</p>
+                            <p class="text-xs text-gray-500">Damaged</p>
+                        </div>
+                    </div>
+                    <form onsubmit="recordProduction(event)" class="space-y-3">
+                        <select class="w-full p-2 border border-gray-300 rounded-lg">
+                            <option>Select Coop</option>
+                            <option>Coop A</option>
+                            <option>Coop B</option>
+                            <option>Coop C</option>
+                        </select>
+                        <div class="grid grid-cols-2 gap-2">
+                            <input type="number" placeholder="Good eggs" class="p-2 border border-gray-300 rounded-lg">
+                            <input type="number" placeholder="Damaged eggs" class="p-2 border border-gray-300 rounded-lg">
+                        </div>
+                        <button type="submit" class="w-full bg-yellow-500 text-white p-2 rounded-lg font-medium hover:bg-yellow-600 transition-colors">
+                            Record Collection
+                        </button>
+                    </form>
+                </div>
+
+                <div class="bg-white rounded-lg p-4 shadow-md mb-4">
+                    <h3 class="font-semibold text-gray-800 mb-3">Weekly Performance</h3>
+                    <div class="space-y-2">
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm">Monday</span>
+                            <div class="flex items-center">
+                                <div class="w-16 h-2 bg-gray-200 rounded-full mr-2">
+                                    <div class="w-4/5 h-2 bg-green-500 rounded-full"></div>
+                                </div>
+                                <span class="text-sm">320</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm">Tuesday</span>
+                            <div class="flex items-center">
+                                <div class="w-16 h-2 bg-gray-200 rounded-full mr-2">
+                                    <div class="w-full h-2 bg-green-500 rounded-full"></div>
+                                </div>
+                                <span class="text-sm">342</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm">Wednesday</span>
+                            <div class="flex items-center">
+                                <div class="w-16 h-2 bg-gray-200 rounded-full mr-2">
+                                    <div class="w-3/4 h-2 bg-yellow-500 rounded-full"></div>
+                                </div>
+                                <span class="text-sm">298</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg p-4 shadow-md">
+                    <h3 class="font-semibold text-gray-800 mb-3">Coop Performance</h3>
+                    <div class="space-y-3">
+                        <div class="p-3 bg-green-50 rounded-lg">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-medium">Coop A</span>
+                                <span class="text-green-600 font-bold">92%</span>
+                            </div>
+                            <p class="text-xs text-gray-600">450 birds • 414 eggs today</p>
+                        </div>
+                        <div class="p-3 bg-yellow-50 rounded-lg">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-medium">Coop B</span>
+                                <span class="text-yellow-600 font-bold">78%</span>
+                            </div>
+                            <p class="text-xs text-gray-600">380 birds • 296 eggs today</p>
+                        </div>
+                        <div class="p-3 bg-blue-50 rounded-lg">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-medium">Coop C</span>
+                                <span class="text-blue-600 font-bold">85%</span>
+                            </div>
+                            <p class="text-xs text-gray-600">417 birds • 355 eggs today</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Inventory Management -->
+            <div id="inventory" class="hidden fade-in">
+                <div class="flex items-center mb-4">
+                    <button onclick="showSection('dashboard')" class="mr-3 p-2 rounded-full bg-white shadow-md">
+                        ←
+                    </button>
+                    <h2 class="text-xl font-bold text-white">Inventory</h2>
+                </div>
+
+                <div class="bg-white rounded-lg p-4 shadow-md mb-4">
+                    <h3 class="font-semibold text-gray-800 mb-3">Current Stock</h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                            <div class="flex items-center">
+                                <span class="text-lg mr-3">🌾</span>
+                                <div>
+                                    <p class="font-medium">Feed Stock</p>
+                                    <p class="text-xs text-gray-500">All types combined</p>
+                                </div>
+                            </div>
+                            <span class="font-bold text-green-600">950 kg</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                            <div class="flex items-center">
+                                <span class="text-lg mr-3">💊</span>
+                                <div>
+                                    <p class="font-medium">Medications</p>
+                                    <p class="text-xs text-gray-500">Various treatments</p>
+                                </div>
+                            </div>
+                            <span class="font-bold text-blue-600">24 units</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                            <div class="flex items-center">
+                                <span class="text-lg mr-3">🧽</span>
+                                <div>
+                                    <p class="font-medium">Cleaning Supplies</p>
+                                    <p class="text-xs text-gray-500">Disinfectants & tools</p>
+                                </div>
+                            </div>
+                            <span class="font-bold text-orange-600">15 items</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg p-4 shadow-md mb-4">
+                    <h3 class="font-semibold text-gray-800 mb-3">Add New Item</h3>
+                    <form onsubmit="addInventory(event)" class="space-y-3">
+                        <select class="w-full p-2 border border-gray-300 rounded-lg">
+                            <option>Item Category</option>
+                            <option>Feed</option>
+                            <option>Medication</option>
+                            <option>Cleaning Supplies</option>
+                            <option>Equipment</option>
+                        </select>
+                        <input type="text" placeholder="Item name" class="w-full p-2 border border-gray-300 rounded-lg">
+                        <div class="grid grid-cols-2 gap-2">
+                            <input type="number" placeholder="Quantity" class="p-2 border border-gray-300 rounded-lg">
+                            <input type="text" placeholder="Unit (kg, pcs, etc.)" class="p-2 border border-gray-300 rounded-lg">
+                        </div>
+                        <input type="date" class="w-full p-2 border border-gray-300 rounded-lg">
+                        <button type="submit" class="w-full bg-purple-500 text-white p-2 rounded-lg font-medium hover:bg-purple-600 transition-colors">
+                            Add to Inventory
+                        </button>
+                    </form>
+                </div>
+
+                <div class="bg-white rounded-lg p-4 shadow-md">
+                    <h3 class="font-semibold text-gray-800 mb-3">Low Stock Alerts</h3>
+                    <div class="space-y-2">
+                        <div class="p-2 bg-red-50 border-l-4 border-red-500 rounded">
+                            <p class="text-sm font-medium text-red-800">Layer Feed - Only 180kg left</p>
+                            <p class="text-xs text-red-600">Reorder recommended</p>
+                        </div>
+                        <div class="p-2 bg-yellow-50 border-l-4 border-yellow-500 rounded">
+                            <p class="text-sm font-medium text-yellow-800">Disinfectant - 2 bottles remaining</p>
+                            <p class="text-xs text-yellow-600">Consider restocking</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <div class="fixed bottom-0 left-1/2 transform -translate-x-1/2 w-full max-w-sm bg-white border-t border-gray-200 p-2">
+            <div class="flex justify-around">
+                <button onclick="showSection('dashboard')" class="flex flex-col items-center p-2 text-blue-500">
+                    <span class="text-lg">🏠</span>
+                    <span class="text-xs">Home</span>
+                </button>
+                <button onclick="showSection('feed')" class="flex flex-col items-center p-2 text-gray-500">
+                    <span class="text-lg">🌾</span>
+                    <span class="text-xs">Feed</span>
+                </button>
+                <button onclick="showSection('health')" class="flex flex-col items-center p-2 text-gray-500">
+                    <span class="text-lg">⚕️</span>
+                    <span class="text-xs">Health</span>
+                </button>
+                <button onclick="showSection('production')" class="flex flex-col items-center p-2 text-gray-500">
+                    <span class="text-lg">📊</span>
+                    <span class="text-xs">Production</span>
+                </button>
+                <button onclick="showSection('inventory')" class="flex flex-col items-center p-2 text-gray-500">
+                    <span class="text-lg">📦</span>
+                    <span class="text-xs">Inventory</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = ['dashboard', 'feed', 'health', 'production', 'inventory'];
+            sections.forEach(section => {
+                document.getElementById(section).classList.add('hidden');
+            });
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.remove('hidden');
+            
+            // Update navigation colors
+            const navButtons = document.querySelectorAll('.fixed button');
+            navButtons.forEach(button => {
+                button.classList.remove('text-blue-500');
+                button.classList.add('text-gray-500');
+            });
+            
+            // Highlight active nav button
+            const activeButton = document.querySelector(`[onclick="showSection('${sectionId}')"]`);
+            if (activeButton && activeButton.closest('.fixed')) {
+                activeButton.classList.remove('text-gray-500');
+                activeButton.classList.add('text-blue-500');
+            }
+        }
+
+        function scheduleFeed(event) {
+            event.preventDefault();
+            alert('Feed scheduled successfully! You will receive a notification when it\'s time to feed.');
+            event.target.reset();
+        }
+
+        function recordHealth(event) {
+            event.preventDefault();
+            alert('Health check recorded successfully! Data has been saved to your farm records.');
+            event.target.reset();
+        }
+
+        function recordProduction(event) {
+            event.preventDefault();
+            alert('Production data recorded! Your daily statistics have been updated.');
+            event.target.reset();
+        }
+
+        function addInventory(event) {
+            event.preventDefault();
+            alert('Item added to inventory successfully! Stock levels have been updated.');
+            event.target.reset();
+        }
+
+        // Initialize app
+        document.addEventListener('DOMContentLoaded', function() {
+            showSection('dashboard');
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98cf1eae53d59080',t:'MTc2MDE5MzcwMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

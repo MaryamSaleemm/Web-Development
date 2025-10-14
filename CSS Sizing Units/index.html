@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Sizing Units</title>
+</head>
+
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        /*html is the root element so this font size will be inherited by every one*/
+        .html{
+            font-size: 12px;
+        }
+        .box {
+
+            box-sizing: border-box;
+            border: 2px solid black;
+            width: 80vw;    /*width of the box*/
+            margin: auto;   /*place item in the center*/
+            background-color: blueviolet;
+        }
+
+        .container {
+
+            box-sizing: border-box;
+            border: 2px solid black;
+            width: 80vw;
+            height: 10vh;
+            margin: 32px auto;  /*auto margin from left and right and the 32px is of top to bottom*/
+            font-size: 10px;
+            background-color: blueviolet;
+        }
+        .container p{
+            font-size: 2em; /*double of the size the paragaph inherits*/
+            font-size: 2rem; /*it says that  make the font size 2x the size of the root html element*/
+        }
+        .container2{
+                background-color: aqua;
+                color: black;
+                font-size: 22px;
+                width: 100vmin; /*its vh....if we want in phone to be (vh) and in laptop it mustbe (wh) use vmax*/
+        }
+    </style>
+    <div class="box">
+        i am a box
+    </div>
+
+    <div class="container">
+        <p>
+            i am a container
+        </p>
+    </div>
+    <div class="container2">
+        i am container 2
+    </div>
+</body>
+
+</html>

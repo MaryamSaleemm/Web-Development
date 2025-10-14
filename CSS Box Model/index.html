@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Box Model</title>
+</head>
+<body>
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 23;
+            border: 70 rgb(194, 106, 46);
+        }
+        .box{
+            background-color: aqua;
+        }
+        .box1{
+            color: rgb(143, 124, 225);
+            margin: 20px;    /* is space around the box....margin is on the outside*/
+            padding: 23px;  /* between content and margin....background color on padding area also*/
+            border: 10px solid blueviolet;
+            height: 100px;  /*alone height represent the height of the content      excluding the padding and the border*/
+            box-sizing: border-box;  /*it means height include both the padding and border area alongside the content.*/
+        }
+        /******margin collapse**********
+
+        In it the margin between two box collapse means if two element margin overlap then the max margin will be applied*/
+        .box2{
+            color: rgb(223, 24, 163);
+            margin: 50px;    
+            padding: 23px;  
+            border: 10px solid blueviolet;
+            height: 100px;  
+            box-sizing: border-box;
+        }
+    </style>
+    <div class="box box1"> I am box1</div>
+    <div class="box box2"> I am box2</div>
+</body>
+</html>
