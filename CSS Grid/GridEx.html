@@ -1,78 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grid </title>
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
-        .container{
+
+        .container {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
             padding: 20px;
         }
-        .box1{
+
+        .card {
             background-color: rgb(226, 240, 241);
             border-radius: 8px;
             width: 300px;
-            height: 150px;
+            padding: 20px;
             text-align: center;
         }
-        .box1a{
-           display: grid;
+
+        .title {
+            font-weight: bold;
+            font-size: x-large;
+
+        }
+
+        .subtitle {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .group {
+            display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 10px;
+            list-style: none;
+
         }
-        .a1{
-             text-decoration: none;
-            padding: 10px;
-            border-radius: 6px;
-            color: white;
-            font-size: 14px;
-            display: block;
-            text-align: center;
+
+        .blue {
+            background-color: blue;
+            color: aliceblue;
+
         }
-        .a2{
-            border-radius: 10px;
-            background-color: rgb(5, 14, 8);
-            text-decoration: none;
-            padding: 8px;
-            grid-row: 2/3;
-            grid-column: 2/3;
+
+        .green {
+            background-color: rgb(19, 158, 91);
+            color: aliceblue;
+
+
         }
-        .box2{
-            
+
+        .btn {
             text-decoration: none;
             padding: 10px;
             border-radius: 6px;
             color: white;
             font-size: 14px;
             display: block;
-            text-align: center;
-        }
-        .box3{
-             background-color: rgb(226, 240, 241);
-            border-radius: 8px;
-            width: 200px;
-            height: 150px;
+            /************/
             text-align: center;
         }
     </style>
 </head>
+
 <body>
     <div class="container">
-        <div class="box1">Deutsch
-            <ul class="box1a">
-                <li ><a href="www.google.com" class="a1">Download 32-bit</a></li>
-                <li><a href="www.google.com"class="a2">Download 64-bit</a></li>
-            </ul>
+        <div class="card">
+            <div class="title">Deutsch</div>
+            <div class="subtitle">Deutsch</div>
+            <div class="group">
+                <a href="www.google.com" class=" btn        green">Download 32-bit</a>
+                <a href="www.google.com" class=" btn blue">Download 64-bit</a>
+            </div>
         </div>
-        <div class="box2">English</div>
-        <div class="box3">Urdu</div>
+        <div class="card">
+            <div class="title">Deutsch</div>
+            <div class="subtitle">German</div>
+            <div class="group">
+                <a href="www.google.com" class=" btn        green">Download 32-bit</a>
+                <a href="www.google.com" class=" btn blue">Download 64-bit</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="title">Italiano</div>
+            <div class="subtitle">Italian</div>
+            <div class="group">
+                <a href="www.google.com" class=" btn        green">Download 32-bit</a>
+                <a href="www.google.com" class=" btn blue">Download 64-bit</a>
+            </div>
+        </div>
+
     </div>
 </body>
+
 </html>
