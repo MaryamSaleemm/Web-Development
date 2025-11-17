@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+
+    <style>
+        .container{
+            width: 80vw;
+            height: 100vh;
+            border: 2px solid rgb(202, 21, 21);
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            /*grid-template-columns: 1fr 1fr 1fr;*/
+            gap: 44px;
+            row-gap: 10px;
+            column-gap: 20px;
+            align-items: center;
+            justify-items: center;
+           
+        }
+        .item{
+    
+            border: 2px solid rebeccapurple;
+            width: 55px;
+            height: 55px;
+            
+        }
+       .item-2{
+        justify-self: end;
+       }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class=" item item-1">1</div>
+        <div class=" item item-2">2</div>
+        <div class=" item item-3">3</div>
+        <div class=" item item-4">4</div>
+
+    </div>
+</body>
+</html>

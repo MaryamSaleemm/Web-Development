@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NavBar</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .NavBar{
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 40px;
+            border-bottom: 1px solid rgb(234, 231, 231) ;
+           
+        }
+        .Logo{
+            font-weight: bold;
+            font-size: x-large;
+             /*padding: 10px;   specify here or above in the nav bar
+               margin: 10px;*/
+        }
+        .nav-links{
+            display: flex;
+            gap: 30px;
+            list-style: none;   /*this remove bullets*/
+            font-size: 16px;
+            /*padding: 10px;
+            margin: 10px;*/
+        
+        }
+        .nav-links a{
+            
+            text-decoration: none;  /*removes the underline from 'anchor' tag*/
+            color: #333;
+            font-size: 19px;
+        }
+        .nav-links a:hover {
+            color: #008cff;
+}
+    </style>
+</head>
+<body>
+    <nav class="NavBar">
+        <div class="Logo">UltraEdit</div>
+        <ul class="nav-links">
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Resources</a></li>
+            <li><a href="#">About us</a></li>
+        </ul>
+    </nav>
+</body>
+</html>
